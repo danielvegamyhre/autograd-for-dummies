@@ -158,7 +158,7 @@ class Scalar(object):
         A piecewise linear function that will output the input directly if it is positive, otherwise, it will output zero.
         '''
         # perform activation function and create output node
-        output_node = Scalar(max(0, self,value), [self], 'relu')
+        output_node = Scalar(max(0, self.value), [self], 'relu')
 
         # derivative of relu function will be 0 or 1
         self.grad_wrt[self] = int(self.value > 0)
