@@ -1,5 +1,5 @@
 class Scalar(object):
-    '''Represents a scalar value and its derivative.'''
+    '''Represents a scalar value and its gradients.'''
 
     def __init__(self, value, parent_nodes=[], prev_op=None):
         assert isinstance(value, (float, int)), "node value must be a scalar"
