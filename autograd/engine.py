@@ -206,12 +206,12 @@ class Scalar(object):
             '''
             Compute the derivative of output with respect to each parent node.
             We can calculate this using the Chain Rule. 
-            (i.e. dOutput/dParent = dOutput/dNode * dNode/dParent)
+            (i.e. doutput/dparent = doutput/dnode * dnode/dparent)
             '''
             for parent in node.parent_nodes:
-                dOutput_dNode = node.grad
-                dNode_dParent = node.grad_wrt[parent]
-                parent.grad += dOutput_dNode * dNode_dParent
+                doutput_dnode = node.grad
+                dnode_dparent = node.grad_wrt[parent]
+                parent.grad += doutput_dnode * dnode_dparent
 
         self.grad = 1
 
