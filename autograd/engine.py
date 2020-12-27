@@ -92,6 +92,8 @@ class Scalar(object):
         # (i.e. z=x*y, dz/dy = x)
         output_node.grad_wrt[other_node] = self.value
 
+        return output_node
+
     # Called by: other_node * self
     def __rmul__(self, other_node):
         # NOTE: we can use __mul__ here because the derivatives of the
@@ -131,7 +133,7 @@ class Scalar(object):
 
         # derivative of output with respect to self will be 1/self.value
         # (i.e. z=y/x, dz/dy=1/x)
-        output_node.grad_wrt[self] = 1/self.value
+        output_node.grad_wrt[other_node] = 1/self.value
         
         return output_node
 
