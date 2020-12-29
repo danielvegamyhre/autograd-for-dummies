@@ -1,3 +1,8 @@
+'''
+A scalar valued autograd engine which implements backpropagation over 
+a dynamically built directed acyclical graph (DAG).
+'''
+
 import math
 
 class Scalar(object):
