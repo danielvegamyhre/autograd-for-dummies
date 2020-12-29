@@ -1,4 +1,6 @@
 # autograd-for-dummies
+![Python application](https://github.com/malwaredllc/autograd-for-dummies/workflows/Python%20application/badge.svg)
+
 A minimal autograd engine written from scratch using no libraries. Inspired heavily by Andrej Karpathy's [micrograd](https://github.com/karpathy/micrograd), but has lots of comments explaining the math, concepts etc. along the way.
 
 ## Overview
