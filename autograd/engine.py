@@ -71,12 +71,12 @@ class Scalar(object):
         # perform arithmetic operation and generate output node
         output_node = Scalar(other_node.value - self.value, [self, other_node], '-')
 
-        # derivative of output with respect to self is 1 
-        # (i.e. deravative of x is 1)
+        # derivative of output with respect to self is =1 
+        # (i.e. deravative of -x is -1)
         output_node.grad_wrt[self] = -1
 
-        # derivative of output with respect to other node is -1 
-        # (i.e. deravative of -x is -1)
+        # derivative of output with respect to other node is 1 
+        # (i.e. deravative of x is 1)
         output_node.grad_wrt[other_node] = 1
 
         return output_node
@@ -223,6 +223,5 @@ class Scalar(object):
         self.grad = 1
 
         # traverse in reverse topological order
-        reversed(_get_topological_order())
         for node in reversed(_get_topological_order()):
             _compute_grad_of_parents(node)
