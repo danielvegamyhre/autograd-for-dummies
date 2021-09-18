@@ -53,7 +53,7 @@ draw_graph(d)
 ### Example: Simple Neural Network (Feed-Forward Multilayer Perceptron)
 
 `autograd.nn` contains a simple neural network library, which contains building blocks for simple neural nets
-such as neurons, layers, and even a MLP (multi-layer perceptron.
+such as neurons, layers, and even a MLP (multi-layer perceptron).
 
 `autograd.utils` contains some important utilities such as common loss functions, regularization techniques, and more.
 
