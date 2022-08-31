@@ -118,7 +118,7 @@ class Scalar(object):
         # (i.e. z=x/y, dz/dx=1/y)
         output_node.grad_wrt[self] = 1/other_node.value
         
-        # derivative of output with respect to self is calculated using the Power Rule
+        # derivative of output with respect to other node is calculated using the Power Rule
         #  z=x/y -> x*y^-1 -> dz/dy = -x*y^-2 -> -x/y^2
         output_node.grad_wrt[other_node] = -self.value / other_node.value**2
 
@@ -136,7 +136,7 @@ class Scalar(object):
         # (i.e. z=y/x -> y*x^-1 -> dz/dx = -y*x^-2 -> -y/x^2)
         output_node.grad_wrt[self] = -other_node.value / self.value**2
 
-        # derivative of output with respect to self will be 1/self.value
+        # derivative of output with respect to other node will be 1/self.value
         # (i.e. z=y/x, dz/dy=1/x)
         output_node.grad_wrt[other_node] = 1/self.value
         
